@@ -34,13 +34,14 @@ $title='ศูนย์อาชีวศึกษาทวิภาคี';
         </style>
     </head>
     <body>
-        <!-- Navigation-->
+        <!-- Navigation-
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="#!"><?php print $title; ?></a>
                 <a class="btn btn-primary" href="../index.php?app/user/index">เข้าสู่ระบบ</a>
             </div>
         </nav>
+        --->
         <!-- Masthead-->
         <header class="masthead">
             <div class="container position-relative">
