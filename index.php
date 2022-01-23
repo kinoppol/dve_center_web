@@ -1,5 +1,5 @@
 <?php
-$title='ศูนย์อาชีวศึกษาทวิภาคี';
+$title='ศูนย์อาชีวศึกษาทวิภาคีเขตพื้นที่';
 
 ?>
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ $title='ศูนย์อาชีวศึกษาทวิภาคี';
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">ศูนย์อาชีวศึกษาทวิภาคี</h1>
+                            <h1 class="mb-5">ศูนย์อาชีวศึกษาทวิภาคีเขตพื้นที่</h1>
                             <h2>สำนักงานคณะกรรมการการอาชีวศึกษา</h2>
                             <!-- Signup form-->
                             <!-- * * * * * * * * * * * * * * *-->
@@ -183,15 +183,11 @@ $title='ศูนย์อาชีวศึกษาทวิภาคี';
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                         <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">About</a></li>
+                            <li class="list-inline-item"><a href="#!">เกี่ยวกับเรา</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contact</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+                            <li class="list-inline-item"><a href="#!">ติดต่อเรา</a></li>
                         </ul>
-                        <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2021. All Rights Reserved.</p>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; 2021 - <?php print date('Y'); ?> สำนักงานคณะกรรมการการอาชีวศึกษา</p>
                     </div>
                     <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                         <ul class="list-inline mb-0">
