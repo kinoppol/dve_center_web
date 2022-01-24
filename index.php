@@ -78,7 +78,7 @@ $center_data=json_decode(file_get_contents($api_url));
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                             <a href="./center/index.php?c=<?php print $row->school_id; ?>">
                                 <img src="./images/vec.png" width="120">
-                                <h3><?php print $row->center_name; ?></h3>
+                                <h2><?php print $row->center_name; ?></h2>
                                 <p class="lead mb-0">ศูนย์หลัก <?php print $row->school_data->school_name; ?></p>
                             </a>
                         </div>
