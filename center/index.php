@@ -1,4 +1,12 @@
 <!doctype html>
+<?php
+$center_id=$_GET['c'];
+$api_url='https://dve.vec.go.th/ajax/dve_center/get_center.php?cid='.$center_id;
+//$api_url='http://localhost/dve2020/ajax/dve_center/get_centers.php';
+$center_data=json_decode(file_get_contents($api_url));
+$title=$center_data->center_name;
+$school_name=$center_data->school_data->school_name;
+?>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -7,7 +15,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/mystyle.css">
-    <title>School Web Template by devbanban.com</title>
+    <title><?php print $title; ?></title>
   </head>
   <body>
     <!--start  banner -->
@@ -62,8 +70,7 @@
         <div class="col col-sm-12 col-md-12">
           <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
             <a class="navbar-brand" href="#">
-              <img src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
-              School
+              DVE-Center
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -118,10 +125,10 @@
           <br>
           <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action active">
-              MENU-1
+              ผู้บริหาร
             </a>
-            <a href="#" class="list-group-item list-group-item-action">Link</a>
-            <a href="#" class="list-group-item list-group-item-action">Link</a>
+            <a href="#" class="list-group-item list-group-item-action"><img src="../images/no_profile.png" width="210"></a>
+            <center><a href="#" class="list-group-item list-group-item-action">ผู้อำนวยการ<br><?php print $school_name; ?></a></center>
             <a href="#" class="list-group-item list-group-item-action">Link</a>
           </div>
           <br>
@@ -230,7 +237,10 @@
         <div class="container-fluid" style="background-color: #e3f2fd;">
           <div class="row">
             <div class="col-12 col-sm-12 col-md-12">
-              <p align="center" class="myfooter"> designed by devbanban.com @2020 || Using Bootstrap4 </p>
+              <p align="center" class="myfooter"><?php print $title; ?> - <?php print $school_name; ?>
+              <br>
+              &copy; 2021-<?php print date('Y'); ?> <a href="http://dvec.vec.go.th">ศูนย์อาชีวศึกษาทวิภาคี</a> · <a href="http://www.vec.go.th">สำนักงานคณะกรรมการการอาชีวศึกษา</a>
+             </p>
             </div>
           </div>
         </div>
