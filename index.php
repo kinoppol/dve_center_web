@@ -1,5 +1,8 @@
 <?php
 $title='ศูนย์อาชีวศึกษาทวิภาคีเขตพื้นที่';
+//$api_url='https://dve.vec.go.th/ajax/dve_center/get_centers.php';
+$api_url='http://localhost/dve2020/ajax/dve_center/get_centers.php';
+$center_data=json_decode(file_get_contents($api_url));
 
 ?>
 <!DOCTYPE html>
@@ -45,7 +48,7 @@ $title='ศูนย์อาชีวศึกษาทวิภาคีเข
         <header class="masthead">
             <div class="container position-relative">
                 <div class="row justify-content-center">
-                    <div class="col-xl-6">
+                    <div class="col-xl-8">
                         <div class="text-center text-white">
                             <!-- Page heading-->
                             <h1 class="mb-5">ศูนย์อาชีวศึกษาทวิภาคีเขตพื้นที่</h1>
@@ -67,113 +70,23 @@ $title='ศูนย์อาชีวศึกษาทวิภาคีเข
         <section class="features-icons bg-light text-center">
             <div class="container">
                 <div class="row">
+                    <?php
+                        foreach($center_data as $row){
+                    ?>
+                    
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <a href="./center/index.php?c=1300000001">
+                            <a href="./center/index.php?c=<?php print $row->school_id; ?>">
                                 <img src="./images/vec.png" width="120">
-                                <h3>ศูนย์อาชีวศึกษาทวิภาคี<br>ภาคตะวันออก 1</h3>
-                                <p class="lead mb-0">ศูนย์หลัก จังหวัดปราจีนบุรี<br>(วิทยาลัยเทคนิคปราจีนบุรี) </p>
+                                <h3><?php print $row->center_name; ?></h3>
+                                <p class="lead mb-0">ศูนย์หลัก <?php print $row->school_data->school_name; ?></p>
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <img src="./images/vec.png" width="120">
-                            <h3>ศูนย์อาชีวศึกษาทวิภาคี<br>ภาคตะวันออก 2</h3>
-                            <p class="lead mb-0">ศูนย์หลัก จังหวัดระยอง<br>(วิทยาลัยเทคนิคบ้านค่าย) </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <img src="./images/vec.png" width="120">
-                            <h3>ศูนย์อาชีวศึกษาทวิภาคี<br>ภาคกลาง 1</h3>
-                            <p class="lead mb-0">ศูนย์หลัก จังหวัดพระนครศรีอยุทธยา<br>(วิทยาลัยเทคนิคพระนครศรีอยุทธยา) </p>
-                        </div>
-                    </div>
-                     <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <img src="./images/vec.png" width="120">
-                            <h3>ศูนย์อาชีวศึกษาทวิภาคี<br>ภาคกลาง 2</h3>
-                            <p class="lead mb-0">ศูนย์หลัก จังหวัดราชบุรี<br>(วิทยาลัยเทคนิคราชบุรี) </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <img src="./images/vec.png" width="120">
-                            <h3>ศูนย์อาชีวศึกษาทวิภาคี<br>ภาคเหนือ 1</h3>
-                            <p class="lead mb-0">ศูนย์หลัก จังหวัดเชียงใหม่<br>(วิทยาลัยเทคนิคเชียงใหม่) </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <img src="./images/vec.png" width="120">
-                            <h3>ศูนย์อาชีวศึกษาทวิภาคี<br>ภาคเหนือ 2</h3>
-                            <p class="lead mb-0">ศูนย์หลัก จังหวัดนครสวรรค์<br>(วิทยาลัยอาชีวศึกษานครสวรรค์) </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <img src="./images/vec.png" width="120">
-                            <h3>ศูนย์อาชีวศึกษาทวิภาคี<br>ภาคตะวันออกเฉียงเหนือ 1</h3>
-                            <p class="lead mb-0">ศูนย์หลัก จังหวัดอุดรธานี<br>(วิทยาลัยเทคนิคอุดรธานี) </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <img src="./images/vec.png" width="120">
-                            <h3>ศูนย์อาชีวศึกษาทวิภาคี<br>ภาคตะวันออกเฉียงเหนือ 2</h3>
-                            <p class="lead mb-0">ศูนย์หลัก จังหวัดนครราชสีมา<br>(วิทยาลัยเทคนิคนครราชสีมา) </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <img src="./images/vec.png" width="120">
-                            <h3>ศูนย์อาชีวศึกษาทวิภาคี<br>ภาคตะวันออกเฉียงเหนือ 3</h3>
-                            <p class="lead mb-0">ศูนย์หลัก จังหวัดอุบลราชธานี<br>(วิทยาลัยเทคนิคอุบลราชธานี) </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <img src="./images/vec.png" width="120">
-                            <h3>ศูนย์อาชีวศึกษาทวิภาคี<br>ภาคใต้ 1</h3>
-                            <p class="lead mb-0">ศูนย์หลัก จังหวัดสุราษร์ธานี<br>(วิทยาลัยเทคนิคสุราษร์ธานี) </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <img src="./images/vec.png" width="120">
-                            <h3>ศูนย์อาชีวศึกษาทวิภาคี<br>ภาคใต้ 2</h3>
-                            <p class="lead mb-0">ศูนย์หลัก จังหวัดภูเก็ต<br>(วิทยาลัยเทคนิคภูเก็ต) </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <img src="./images/vec.png" width="120">
-                            <h3>ศูนย์อาชีวศึกษาทวิภาคี<br>ภาคใต้ 3</h3>
-                            <p class="lead mb-0">ศูนย์หลัก จังหวัดสงขลา<br>(วิทยาลัยเทคนิคหาดใหญ่) </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <img src="./images/vec.png" width="120">
-                            <h3>ศูนย์อาชีวศึกษาทวิภาคี<br>ปริมณฑล 1</h3>
-                            <p class="lead mb-0">ศูนย์หลัก จังหวัดปทุมธานี<br>(วิทยาลัยการอาชีวศึกษาปทุมธานี) </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <img src="./images/vec.png" width="120">
-                            <h3>ศูนย์อาชีวศึกษาทวิภาคี<br>ปริมณฑล 2</h3>
-                            <p class="lead mb-0">ศูนย์หลัก จังหวัดสมุทรปราการ<br>(วิทยาลัยเทคนิคสมุทรปราการ) </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <img src="./images/vec.png" width="120">
-                            <h3>ศูนย์อาชีวศึกษาทวิภาคี<br>กรุงเทพมหานคร</h3>
-                            <p class="lead mb-0">ศูนย์หลักวิทยาลัยบริหารธุรกิจและการท่องเที่ยวกรุงเทพ </p>
-                        </div>
-                    </div>
+
+                    <?php
+                        }
+                    ?>
                 </div>
             </div>
         </section>
