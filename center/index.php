@@ -5,7 +5,7 @@ $api_url='https://dve.vec.go.th/ajax/dve_center/get_center.php?cid='.$center_id;
 //print $api_url;
 //$api_url='http://localhost/dve2020/ajax/dve_center/get_centers.php';
 $center_data=json_decode(file_get_contents($api_url));
-print_r($center_data);
+//print_r($center_data);
 $title=$center_data->center_name;
 $school_name=$center_data->school_data->school_name;
 $director_name=$center_data->school_data->director_name;
