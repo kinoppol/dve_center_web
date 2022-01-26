@@ -134,7 +134,6 @@ $director_name=$center_data->school_data->director_name;
             <center>
               <a href="#" class="list-group-item list-group-item-action"><?php print $director_name; ?><br>
               ผู้อำนวยการ<br><?php print $school_name; ?></a></center>
-            <a href="#" class="list-group-item list-group-item-action">Link</a>
           </div>
           <br>
           <div class="list-group">
