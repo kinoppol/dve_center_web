@@ -131,8 +131,9 @@ $director_name=$center_data->school_data->director_name;
               ผู้บริหาร
             </a>
             <a href="#" class="list-group-item list-group-item-action"><img src="../images/no_profile.png" width="210"></a>
-            <center><?php print $director_name; ?><br>
-              <a href="#" class="list-group-item list-group-item-action">ผู้อำนวยการ<br><?php print $school_name; ?></a></center>
+            <center>
+              <a href="#" class="list-group-item list-group-item-action"><?php print $director_name; ?><br>
+              ผู้อำนวยการ<br><?php print $school_name; ?></a></center>
             <a href="#" class="list-group-item list-group-item-action">Link</a>
           </div>
           <br>
