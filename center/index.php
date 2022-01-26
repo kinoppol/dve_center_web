@@ -5,7 +5,7 @@ $api_url='https://dve.vec.go.th/ajax/dve_center/get_center.php?cid='.$center_id;
 //$api_url='http://localhost/dve2020/ajax/dve_center/get_centers.php';
 $center_data=json_decode(file_get_contents($api_url));
 $title=$center_data->center_name;
-$school_name=$center_data->school_data->school_name;
+$director_name=$center_data->school_data->director_name;
 ?>
 <html lang="en">
   <head>
@@ -128,7 +128,8 @@ $school_name=$center_data->school_data->school_name;
               ผู้บริหาร
             </a>
             <a href="#" class="list-group-item list-group-item-action"><img src="../images/no_profile.png" width="210"></a>
-            <center><a href="#" class="list-group-item list-group-item-action">ผู้อำนวยการ<br><?php print $school_name; ?></a></center>
+            <center><?php print $director_name; ?><br>
+              <a href="#" class="list-group-item list-group-item-action">ผู้อำนวยการ<br><?php print $school_name; ?></a></center>
             <a href="#" class="list-group-item list-group-item-action">Link</a>
           </div>
           <br>
