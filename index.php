@@ -25,7 +25,7 @@ $center_data=json_decode(file_get_contents($api_url));
   body{
     font-family: 'Kanit', sans-serif;
   }
-  :is(h1, h2, h3, h4, h5, h6) {
+  :is(h1, h2, h3, h4, h5, h6, p) {
     font-family: 'Kanit', sans-serif;
 }
 
