@@ -1,6 +1,7 @@
 <!doctype html>
 <?php
 $center_id=$_GET['c'];
+if(empty($center_id))header('location:../');
 $api_url='https://dve.vec.go.th/ajax/dve_center/get_center.php?cid='.$center_id;
 //print $api_url;
 //$api_url='http://localhost/dve2020/ajax/dve_center/get_centers.php';
