@@ -19,6 +19,19 @@ $director_name=$center_data->school_data->director_name;
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/mystyle.css">
     <title><?php print $title; ?></title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <style>
+  body{
+    font-family: 'Kanit', sans-serif;
+  }
+  :is(h1, h2, h3, h4, h5, h6) {
+    font-family: 'Kanit', sans-serif;
+}
+
+span {
+    font-family: 'Kanit', sans-serif;
+}
+  </style>
   </head>
   <body>
     <!--start  banner -->
@@ -26,19 +39,22 @@ $director_name=$center_data->school_data->director_name;
       <div class="row">
         <div class="col col-sm-12 col-md-12">
           <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <!--
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
               <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
               <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
             </ol>
+-->
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="img/1.jpg" class="d-block w-100" alt="...">
+                <img src="img/def.png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                  <h5><?php print $title; ?></h5>
+                  <p>ศูนย์หลัก<?php print $school_name; ?></p>
                 </div>
               </div>
+              <!--
               <div class="carousel-item">
                 <img src="img/1.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
@@ -63,6 +79,7 @@ $director_name=$center_data->school_data->director_name;
               <span class="sr-only">Next</span>
             </a>
           </div>
+-->
         </div>
       </div>
     </div>
@@ -72,7 +89,7 @@ $director_name=$center_data->school_data->director_name;
       <div class="row">
         <div class="col col-sm-12 col-md-12">
           <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../">
               DVE-Center
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,8 +98,8 @@ $director_name=$center_data->school_data->director_name;
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
+                  <a class="nav-link" href="index.html">หน้าหลัก <span class="sr-only">(current)</span></a>
+                </li><!--
                 <li class="nav-item">
                   <a class="nav-link" href="https://www.youtube.com/c/devbanban" target="_blank">Youtube</a>
                 </li>
@@ -108,11 +125,12 @@ $director_name=$center_data->school_data->director_name;
                 </li>
                 <li class="nav-item">
                   <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
+                </li>-->
               </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              <form action="https://google.com/search" target="_blank" type="GET" class="form-inline my-2 my-lg-0">
+                <input type="hidden" name="as_sitesearch" value="vec.go.th">
+                <input class="form-control mr-sm-2" type="search" name="q" placeholder="คำค้น" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ค้นหา</button>
               </form>
             </div>
           </nav>
@@ -138,7 +156,7 @@ $director_name=$center_data->school_data->director_name;
           <br>
           <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action active">
-              MENU-2
+              จังหวัดภายในเขตพื้นที่
             </a>
             <a href="#" class="list-group-item list-group-item-action">Link</a>
             <a href="#" class="list-group-item list-group-item-action">Link</a>
@@ -150,7 +168,7 @@ $director_name=$center_data->school_data->director_name;
         <div class="col col-sm-9 col-md-9">
           <br>
           <div class="alert alert-info" role="alert">
-            - ข่าวประชาสัมพันธ์
+            ข่าวประชาสัมพันธ์
           </div>
           <div class="row">
             <div class="col-6 col-sm-3 col-md-3" style="margin-bottom: 20px;">
@@ -190,8 +208,8 @@ $director_name=$center_data->school_data->director_name;
               </div>
             </div>
             </div><!-- row -->
-            <div class="alert alert-danger" role="alert">
-              - ภาพกิจกรรม
+            <div class="alert alert-success" role="alert">
+              สถานศึกษา
             </div>
             <div class="row">
               <div class="col-6 col-sm-3 col-md-3" style="margin-bottom: 20px;">
