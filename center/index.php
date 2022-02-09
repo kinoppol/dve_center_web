@@ -98,7 +98,7 @@ span {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">หน้าหลัก <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="./?c=<?php print $center_id; ?>">หน้าหลัก <span class="sr-only">(current)</span></a>
                 </li><!--
                 <li class="nav-item">
                   <a class="nav-link" href="https://www.youtube.com/c/devbanban" target="_blank">Youtube</a>
@@ -158,96 +158,62 @@ span {
             <a href="#" class="list-group-item list-group-item-action active">
               จังหวัดภายในเขตพื้นที่
             </a>
-            <a href="#" class="list-group-item list-group-item-action">Link</a>
-            <a href="#" class="list-group-item list-group-item-action">Link</a>
-            <a href="#" class="list-group-item list-group-item-action">Link</a>
+            <?php
+              $provinces=explode(',',$center_data->provinces);
+              $schools=array();
+              foreach($provinces as $p){
+                
+                $api_url='https://dve.vec.go.th/ajax/api/get_province_data.php?pid='.$p;
+                $province_data=json_decode(file_get_contents($api_url));
+
+                $api_url='https://dve.vec.go.th/ajax/api/get_school_in_province.php?pid='.$p;
+                $school_data=json_decode(file_get_contents($api_url));
+                $schools[$school_data->school_id]=$school_data;
+
+            ?>
+            <a href="https://dve.vec.go.th/index.php?app/home/index_province&province_id=<?php print $p;?>" class="list-group-item list-group-item-action" target="_blank"><?php print 'จังหวัด'.$province_data->province_name; ?></a>
+            <?php
+              }
+              //print_r($schools);
+              ?>
           </div>
         </div>
         <!--end menu left -->
         <!--start content -->
         <div class="col col-sm-9 col-md-9">
           <br>
-          <div class="alert alert-info" role="alert">
+          <div class="alert alert-success" role="alert">
             ข่าวประชาสัมพันธ์
           </div>
           <div class="row">
             <div class="col-6 col-sm-3 col-md-3" style="margin-bottom: 20px;">
               <div class="card" style="width: 100%;">
-                <img src="img/2.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">คอร์สออนไลน์</h5>
-                  <a href="https://devbanban.com/?p=2867" class="btn btn-primary btn-sm" target="_blank">Read More..</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-6 col-sm-3 col-md-3" style="margin-bottom: 20px;">
-              <div class="card" style="width: 100%;">
-                <img src="img/2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">คอร์สออนไลน์</h5>
-                  <a href="https://devbanban.com/?p=2867" class="btn btn-primary btn-sm" target="_blank">Read More..</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-6 col-sm-3 col-md-3" style="margin-bottom: 20px;">
-              <div class="card" style="width: 100%;">
-                <img src="img/2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">คอร์สออนไลน์</h5>
-                  <a href="https://devbanban.com/?p=2867" class="btn btn-primary btn-sm" target="_blank">Read More..</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-6 col-sm-3 col-md-3" style="margin-bottom: 20px;">
-              <div class="card" style="width: 100%;">
-                <img src="img/2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">คอร์สออนไลน์</h5>
-                  <a href="https://devbanban.com/?p=2867" class="btn btn-primary btn-sm" target="_blank">Read More..</a>
+                  <h5 class="card-title">ข่าวประชาสัมพันธ์</h5>
+                  <a href="https://dve.vec.go.th" class="btn btn-primary btn-sm" target="_blank">อ่านต่อ</a>
                 </div>
               </div>
             </div>
             </div><!-- row -->
-            <div class="alert alert-success" role="alert">
-              สถานศึกษา
+            <div class="alert alert-warning" role="alert">
+              สถานศึกษาในเขตพื้นที่
             </div>
             <div class="row">
+              <?php
+              foreach($schools as $row){
+              ?>
               <div class="col-6 col-sm-3 col-md-3" style="margin-bottom: 20px;">
                 <div class="card" style="width: 100%;">
-                  <img src="img/2.jpg" class="card-img-top" alt="...">
+                  <img src="img/vec_school.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">ภาพกิจกรรม</h5>
-                    <a href="https://devbanban.com/?p=2867" class="btn btn-primary btn-sm" target="_blank">Read More..</a>
+                    <h6 class="card-title"><?php print $row->school_name; ?></h6>
+                    <a href="https://dve.vec.go.th/index.php?app/home/index_school&school_id=<?php print $row->school_id; ?>" class="btn btn-primary btn-sm" target="_blank">ดูข้อมูล</a>
                   </div>
                 </div>
               </div>
-              <div class="col-6 col-sm-3 col-md-3" style="margin-bottom: 20px;">
-                <div class="card" style="width: 100%;">
-                  <img src="img/2.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">ภาพกิจกรรม</h5>
-                    <a href="https://devbanban.com/?p=2867" class="btn btn-primary btn-sm" target="_blank">Read More..</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 col-sm-3 col-md-3" style="margin-bottom: 20px;">
-                <div class="card" style="width: 100%;">
-                  <img src="img/2.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">ภาพกิจกรรม</h5>
-                    <a href="https://devbanban.com/?p=2867" class="btn btn-primary btn-sm" target="_blank">Read More..</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 col-sm-3 col-md-3" style="margin-bottom: 20px;">
-                <div class="card" style="width: 100%;">
-                  <img src="img/2.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">ภาพกิจกรรม</h5>
-                    <a href="https://devbanban.com/?p=2867" class="btn btn-primary btn-sm" target="_blank">Read More..</a>
-                  </div>
-                </div>
-              </div>
+              <?php
+              }
+              ?>
               </div><!-- row -->
             </div>
             <!--end content -->

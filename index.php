@@ -20,6 +20,19 @@ $center_data=json_decode(file_get_contents($api_url));
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <style>
+  body{
+    font-family: 'Kanit', sans-serif;
+  }
+  :is(h1, h2, h3, h4, h5, h6) {
+    font-family: 'Kanit', sans-serif;
+}
+
+span {
+    font-family: 'Kanit', sans-serif;
+}
+  </style>
         <link href="css/styles.css" rel="stylesheet" />
         <style>
             a:link{
