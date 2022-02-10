@@ -178,7 +178,12 @@ $director_pic=json_decode(file_get_contents($api_url));
 
                 $api_url='https://dve.vec.go.th/ajax/api/get_school_in_province.php?pid='.$p;
                 $school_data=json_decode(file_get_contents($api_url));
-                $schools[$school_data->school_id]=$school_data;
+                
+                foreach($school_data as $sc){
+                  $schools[$sc->school_id]=$sc->school_name;
+                }
+
+                //print_r($schools);
 
             ?>
             <a href="https://dve.vec.go.th/index.php?app/home/index_province&province_id=<?php print $p;?>" class="list-group-item list-group-item-action" target="_blank"><?php print 'จังหวัด'.$province_data->province_name; ?></a>
@@ -210,14 +215,14 @@ $director_pic=json_decode(file_get_contents($api_url));
             </div>
             <div class="row">
               <?php
-              foreach($schools as $row){
+              foreach($schools as $k=>$v){
               ?>
               <div class="col-6 col-sm-3 col-md-3" style="margin-bottom: 20px;">
                 <div class="card" style="width: 100%;">
                   <img src="img/vec_school.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h6 class="card-title"><?php print $row->school_name; ?></h6>
-                    <a href="https://dve.vec.go.th/index.php?app/home/index_school&school_id=<?php print $row->school_id; ?>" class="btn btn-primary btn-sm" target="_blank">ดูข้อมูล</a>
+                    <h6 class="card-title"><?php print $v; ?></h6>
+                    <a href="https://dve.vec.go.th/index.php?app/home/index_school&school_id=<?php print $k; ?>" class="btn btn-primary btn-sm" target="_blank">ดูข้อมูล</a>
                   </div>
                 </div>
               </div>
