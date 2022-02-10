@@ -21,6 +21,7 @@ $director_name=$center_data->school_data->director_name;
     <link rel="stylesheet" href="css/mystyle.css">
     <title><?php print $title; ?></title>
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    
   <style>
   body{
     font-family: 'Kanit', sans-serif;
@@ -201,14 +202,38 @@ $director_pic=json_decode(file_get_contents($api_url));
             ข่าวประชาสัมพันธ์
           </div>
           <div class="row">
-            <div class="col-6 col-sm-3 col-md-3" style="margin-bottom: 20px;">
+            <?php
+            $api_url='https://dve.vec.go.th/ajax/dve_center/get_lastest_news.php?cid='.$center_id;
+            $news=json_decode(file_get_contents($api_url));
+            foreach($news as $n){
+              //print_r($n);
+            ?>
+            <div class="col-6 col-sm-12 col-md-4" style="margin-bottom: 20px;">
               <div class="card" style="width: 100%;">
                 <div class="card-body">
-                  <h5 class="card-title">ข่าวประชาสัมพันธ์</h5>
-                  <a href="https://dve.vec.go.th" class="btn btn-primary btn-sm" target="_blank">อ่านต่อ</a>
+                  <h5 class="card-title"><?php print $n->subject; ?></h5>
+                  <h6 class="card-title"><?php print mb_substr($n->detail,0,20).'..'; ?></h6>
+                  <a href="#<?php print $n->id; ?>" data-href="./readNews.php?nid=<?php print $n->id; ?>" data-toggle="modal" data-target="#readNews" class="btn btn-primary btn-sm openPopup" target="_blank">อ่านข่าว</a>
                 </div>
               </div>
             </div>
+            <?php
+            }
+            if(count($news)==0){
+              ?>
+
+            <div class="col-6 col-sm-3 col-md-3" style="margin-bottom: 20px;">
+              <div class="card" style="width: 100%;">
+                <div class="card-body">
+                  <h5 class="card-title">ไม่มีข่าวประชาสัมพันธ์</h5>
+                 
+                </div>
+              </div>
+            </div>
+
+              <?php
+            }
+            ?>
             </div><!-- row -->
             <div class="alert alert-warning" role="alert">
               สถานศึกษาในเขตพื้นที่
@@ -248,10 +273,30 @@ $director_pic=json_decode(file_get_contents($api_url));
           </div>
         </div>
         <!--end  footer -->
+        <!--
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+            -->
+<div class="modal fade bd-example-modal-lg" id="readNews" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content modal-body">
+      โปรดรอสักครู่..
+    </div>
+  </div>
+</div>
       </body>
     </html>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+  $(document).ready(function(){
+      $('.openPopup').on('click',function(){
+          var dataURL = $(this).attr('data-href');
+          $('.modal-body').load(dataURL,function(){
+              $('#myModal').modal({show:true});
+          });
+      }); 
+  });
+  </script>
