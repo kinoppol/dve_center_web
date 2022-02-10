@@ -51,7 +51,7 @@ span {
               <div class="carousel-item active">
                 <img src="img/def.png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5><?php print $title; ?></h5>
+                  <h3><?php print $title; ?></h3>
                   <p>ศูนย์หลัก<?php print $school_name; ?></p>
                 </div>
               </div>
