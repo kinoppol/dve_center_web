@@ -149,7 +149,16 @@ span {
             <a href="#" class="list-group-item list-group-item-action active">
               ผู้บริหาร
             </a>
-            <a href="#" class="list-group-item list-group-item-action"><img src="../images/no_profile.png" width="210"></a>
+            <?php
+            
+
+$api_url='https://dve.vec.go.th/ajax/school/get_director_pic.php?sid='.$center_id;
+//print $api_url;
+$director_pic=json_decode(file_get_contents($api_url));
+//print_r($director_pic);
+
+            ?>
+            <a href="#" class="list-group-item list-group-item-action"><img src="<?php print $director_pic->pic_url; ?>" width="210"></a>
             <center>
               <a href="#" class="list-group-item list-group-item-action"><?php print $director_name; ?><br>
               ผู้อำนวยการ<br><?php print $school_name; ?></a></center>
