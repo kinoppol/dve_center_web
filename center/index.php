@@ -222,7 +222,7 @@ $director_pic=json_decode(file_get_contents($api_url));
                   <img src="img/vec_school.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h6 class="card-title"><?php print $v; ?></h6>
-                    <a href="https://dve.vec.go.th/index.php?app/home/index_school&school_id=<?php print $k; ?>" class="btn btn-primary btn-sm" target="_blank">ดูข้อมูล</a>
+                    <a href="https://dve.vec.go.th/index.php?app/home/index_school&school_id=<?php print $k; ?>" class="btn btn-primary btn-sm form-control" target="_blank">ดูข้อมูล</a>
                   </div>
                 </div>
               </div>
