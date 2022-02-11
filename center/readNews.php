@@ -23,11 +23,8 @@ if(!empty($news->attach_files)){
 
             <div class="col-6 col-sm-4 col-md-4" style="margin-bottom: 20px;">
                 <div class="card" style="width: 100%;">
-                  <img src="<?php print $file_url; ?>" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h6 class="card-title"><?php print $v; ?></h6>
-                    <a href="<?php print $file_url; ?>" target="_blank"><?php print $f->name; ?></a>
-                  </div>
+                <a href="<?php print $file_url; ?>" target="_blank"><img src="<?php print $file_url; ?>" class="card-img-top" alt="<?php print $f->name; ?>">
+                    </a>
                 </div>
               </div>
 
