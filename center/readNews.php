@@ -13,7 +13,7 @@ if(!empty($news->attach_files)){
 
     foreach($files as $f){
         ?>
-        <a href="<?php print $f->location; ?>" target="_blank"><?php print $f->name; ?></a><br>
+        <a href="https://dve.vec.go.th/files/news/<?php print $news->center_id.'/'.$f->location; ?>" target="_blank"><?php print $f->name; ?></a><br>
         <?php
     }
     print '</p>';
