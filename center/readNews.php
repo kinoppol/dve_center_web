@@ -18,7 +18,7 @@ if(!empty($news->attach_files)){
         $fname=explode('.',$f->location);
         $ext=end($fname);
         $file_url='https://dve.vec.go.th/files/news/'.$news->center_id.'/'.$f->location;
-        if(array_search($ext,array('jpg','JPG','jpeg','JPEG','png','PNG'))){
+        if(is_numeric(array_search($ext,array('jpg','JPG','jpeg','JPEG','png','PNG')))){
             ?>
 
             <div class="col-6 col-sm-4 col-md-4" style="margin-bottom: 20px;">
