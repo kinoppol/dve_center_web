@@ -101,16 +101,16 @@ span {
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                   <a class="nav-link" href="./?c=<?php print $center_id; ?>">หน้าหลัก <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./?c=<?php print $center_id; ?>&p=personal">บุคลากร</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./?c=<?php print $center_id; ?>&p=contact">ติดต่อศูนย์</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"  data-toggle="modal" data-target="#about">เกี่ยวกับระบบ</a>
                 </li><!--
-                <li class="nav-item">
-                  <a class="nav-link" href="https://www.youtube.com/c/devbanban" target="_blank">Youtube</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="https://devbanban.com/?p=2867" target="_blank">คอร์สออนไลน์</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="https://devbanban.com/?page_id=2309" target="_blank">สนับสนุน</a>
-                </li>
                 <li class="nav-item">
                   <a class="nav-link" href="https://www.facebook.com/sornwebsites/" target="_blank">ติดต่อ</a>
                 </li>
@@ -130,7 +130,7 @@ span {
                 </li>-->
               </ul>
               <form action="https://google.com/search" target="_blank" type="GET" class="form-inline my-2 my-lg-0">
-                <input type="hidden" name="as_sitesearch" value="vec.go.th">
+                <input type="hidden" name="as_sitesearch" value="dve.vec.go.th">
                 <input class="form-control mr-sm-2" type="search" name="q" placeholder="คำค้น" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ค้นหา</button>
               </form>
@@ -278,11 +278,24 @@ $director_pic=json_decode(file_get_contents($api_url));
             -->
 <div class="modal fade bd-example-modal-lg" id="readNews" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
-    <div class="modal-content modal-body">
+    <div class="modal-content modal-body" id="newsBody">
       โปรดรอสักครู่..
     </div>
   </div>
 </div>
+
+<div class="modal fade bd-example-modal-lg" id="about" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content modal-body id="aboutBody"">
+      <h3>ระบบจัดการฐานข้อมูลการจัดการศึกษาทวิภาคี</h3>
+      <p>ระบบบริหารจัดการหน้าเว็บเพ็จของศูนย์อาชีวศึกษาทวิภาคีเขตพื้นที่<br>
+      &copy; 2021-<?php print date('Y'); ?> <a href="http://dvec.vec.go.th">ศูนย์อาชีวศึกษาทวิภาคี</a> · <a href="http://www.vec.go.th">สำนักงานคณะกรรมการการอาชีวศึกษา</a><br>
+      Powered template by <a href="https://github.com/devbanban/school-template" target="_blank">devbanban school-template</a>
+      </p>
+    </div>
+  </div>
+</div>
+
       </body>
     </html>
     <!-- Optional JavaScript -->
@@ -294,7 +307,7 @@ $director_pic=json_decode(file_get_contents($api_url));
   $(document).ready(function(){
       $('.openPopup').on('click',function(){
           var dataURL = $(this).attr('data-href');
-          $('.modal-body').load(dataURL,function(){
+          $('#newsBody').load(dataURL,function(){
               $('#myModal').modal({show:true});
           });
       }); 
