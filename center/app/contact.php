@@ -3,6 +3,7 @@
           <div class="alert alert-info" role="alert">
             ติดต่อศูนย์
           </div>
+          <div class="card-body">
     <h3><?php print $center_data->center_name; ?></h3>
     <h6><?php print $center_data->school_data->school_name; ?></h6>
     <p>
@@ -17,4 +18,5 @@
         }
     ?>
     </p>
+    </div>
     </div>
