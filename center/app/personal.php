@@ -19,7 +19,7 @@
                 ?>
                 <div class="col-4 col-sm-4 col-md-4" style="margin-bottom: 20px;">
                     <div class="card" style="width: 100%;">
-                    <img src="../../images/director/no_profile.jpg" class="card-img-top" alt="...">
+                    <img src="../../images/director/no_profile.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h6 class="card-title"><center><?php print $person->prefix.$person->fname.' '.$person->lname; ?></center></h6>
                         <h6 class="card-title"><center>ตำแหน่ง <?php print $person->user_type; ?></center></h6>
