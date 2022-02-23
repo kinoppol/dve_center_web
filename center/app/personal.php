@@ -14,9 +14,9 @@ $personal_pic=json_decode(file_get_contents($api_url));
     <h6><?php print $center_data->school_data->school_name; ?></h6>
     <p>
     <div class="row">
+            <div class="col-12 col-sm-12 col-md-12" style="margin-bottom: 20px;">
             <img src="<?php print $personal_pic->pic_url; ?>" width="100%">
-            <br>
-            <br>
+            </div>
     </div>
     <div class="row">
         <?php
