@@ -1,3 +1,9 @@
+<?php
+$api_url='https://dve.vec.go.th/ajax/dve_center/get_personal_pic.php?sid='.$center_id;
+//print $api_url;
+$personal_pic=json_decode(file_get_contents($api_url));
+
+?>
 <div class="col col-sm-9 col-md-9">
 <br>
           <div class="alert alert-danger" role="alert">
@@ -7,7 +13,9 @@
     <h3><?php print $center_data->center_name; ?></h3>
     <h6><?php print $center_data->school_data->school_name; ?></h6>
     <p>
-        
+    <div class="row">
+            <img src="<?php print $personal_pic->pic_url; ?>" width="100%">
+    </div>
     <div class="row">
         <?php
             $api_url='https://dve.vec.go.th/ajax/dve_center/get_personal.php?school_id='.$center_id;
