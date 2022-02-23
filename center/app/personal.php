@@ -15,6 +15,7 @@ $personal_pic=json_decode(file_get_contents($api_url));
     <p>
     <div class="row">
             <img src="<?php print $personal_pic->pic_url; ?>" width="100%">
+            <br>
     </div>
     <div class="row">
         <?php
