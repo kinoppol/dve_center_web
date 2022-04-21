@@ -1,5 +1,5 @@
 <?php
-$title='ศูนย์อาชีวศึกษาทวิภาคีเขตพื้นที่';
+$title='ระบบฐานข้อมูลการจัดการศึกษาทวิภาคี DVE-DATA';
 $api_url='https://dve.vec.go.th/ajax/dve_center/get_centers.php';
 //$api_url='http://localhost/dve2020/ajax/dve_center/get_centers.php';
 $center_data=json_decode(file_get_contents($api_url));
@@ -20,42 +20,86 @@ $center_data=json_decode(file_get_contents($api_url));
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+      
+<link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
   <style>
-  body{
-    font-family: 'Kanit', sans-serif;
-  }
-  :is(h1, h2, h3, h4, h5, h6, p) {
-    font-family: 'Kanit', sans-serif;
+@font-face {
+    font-family: 'Sarabun', sans-serif;
+    src: url('http://webfont.webdesigner.in.th/font/THSarabunNew/thsarabunnew.eot');
+    src: url('http://webfont.webdesigner.in.th/font/THSarabunNew/thsarabunnew.eot') format('embedded-opentype'),
+         url('http://webfont.webdesigner.in.th/font/THSarabunNew/thsarabunnew.woff') format('woff'),
+         url('http://webfont.webdesigner.in.th/font/THSarabunNew/thsarabunnew.ttf') format('truetype'),
+         url('http://webfont.webdesigner.in.th/font/THSarabunNew/thsarabunnew.svg#THSarabunNewRegular') format('svg');
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Sarabun', sans-serif;
+}
+
+a{
+	font-family: 'Sarabun', sans-serif;
+}
+body{
+	font-family: 'Sarabun', sans-serif;
 }
 
 span {
-    font-family: 'Kanit', sans-serif;
+	font-family: 'Sarabun', sans-serif;
 }
   </style>
+  <style>
+  .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #3c8dbc;
+  }
+
+  .ui-autocomplete {
+    z-index: 5000;
+  }
+  .nav-tabs{
+    background-color: #009688 ;
+  }
+  /* .tab-content{
+      background-color: 5000;
+      color:#ffffcc;
+      padding:5px
+  } */
+  .nav-tabs > li > a{
+    border: medium none;
+  }
+  /* .nav-tabs > li > a:hover{
+    background-color: #303136 !important;
+      border: medium none;
+      border-radius: 0;
+      color:#fff;
+  } */
+
+  </style>
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="css/styles.css" rel="stylesheet" />
-        <style>
-            a:link{
-                color:black;
-                text-decoration:none;
-            }
-            a:hover{
-                color:darkred;
-                text-decoration:underline;
-            }
-            a:visited{
-                color:black;
-                text-decoration:none;
-            }
-        </style>
     </head>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="#!"><?php print $title; ?></a>
-                <!-- <a class="btn btn-primary" href="../index.php?app/user/index">เข้าสู่ระบบ</a> -->
+<div class="nav">
+	<div class="wrapper vec_link">
+
+    <img src="images/vec.png" height="55" />
+    <a href="https://www.vec.go.th"> สำนักงานคณะกรรมการการอาชีวศึกษา</a>
+
+    <ul>
+        <li><a href="/" class="active"><i class="fa fa-home"></i> หน้าหลัก</a></li>
+        <li><a href="../index.php?app/home/index"><i class="fa fa-database"></i> ระบบฐานข้อมูล &#x25BE;</a>
+            <ul>
+              <li><a href="../index.php?app/user/index"><i class="fa fa-user-check"></i> เข้าสู่ระบบ</a><li>
+              <li><a href="../index.php?app/user/password_recovery"><i class="fa fa-key"></i> กู้คืนรหัสผ่าน</a></li>
+            </ul>
+        </li>
+        </ul>
             </div>
+            <div>
+        </div>
         </nav>
         <!-- Masthead-->
         <header class="masthead">
@@ -64,8 +108,8 @@ span {
                     <div class="col-xl-8">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">ศูนย์อาชีวศึกษาทวิภาคีเขตพื้นที่</h1>
-                            <h2>สำนักงานคณะกรรมการการอาชีวศึกษา</h2>
+                            <h1 class="mb-5">ระบบฐานข้อมูลการจัดการศึกษาทวิภาคี</h1>
+                            <h2>ศูนย์อาชีวศึกษาทวิภาคี สำนักงานคณะกรรมการการอาชีวศึกษา</h2>
                             <!-- Signup form-->
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
@@ -81,14 +125,14 @@ span {
         </header>
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
-            <div class="container">
+            <div class="container ">
                 <div class="row">
                     <?php
                         foreach($center_data as $row){
                     ?>
                     
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div class="col-lg-4 center_link">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3 ">
                             <a href="./center/index.php?c=<?php print $row->school_id; ?>">
                                 <img src="./images/vec.png" width="120">
                                 <h2><?php print $row->center_name; ?></h2>

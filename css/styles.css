@@ -11303,10 +11303,17 @@ textarea.form-control-lg {
 header.masthead {
   position: relative;
   background-color: #343a40;
-  background: url("../assets/img/bg-masthead.jpg") no-repeat center center;
+  background: url("../assets/img/pic7.jpeg") no-repeat center center;
   background-size: cover;
   padding-top: 8rem;
   padding-bottom: 8rem;
+}
+
+header.masthead h1,header.masthead h2{
+    /* 
+    filter: blur(1px);
+    -webkit-filter: blur(1px);*/
+    text-shadow: 2px 2px #000000;
 }
 header.masthead:before {
   content: "";
@@ -11378,4 +11385,100 @@ header.masthead h1, header.masthead .h1 {
 footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+
+.vec_link a {
+  text-decoration: none;
+	padding: 15px 16px;
+	top: 100%;
+	color : #fff;
+	display: inline-block;
+	text-align: center;
+}
+
+
+.nav {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #660000;
+	clear: both;
+	height: 60px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 100;
+}
+.nav .wrapper {
+	margin: 0 auto;
+	width: 980px;
+}
+.nav img {
+	display: block;
+	float: left;
+	margin-top: 2px;
+}
+.nav ul {
+	list-style: none;
+	padding: 0;
+	float: right;
+	display: inline-block;
+}
+.nav li {
+	position: relative;
+	font: 14px Arial, Helvetica, sans-serif;
+	letter-spacing: 1px;
+	float: left;
+}
+.nav li a {
+	display: block;
+	text-decoration: none;
+	color: #d6e1ea;
+	text-align: center;
+	line-height: 60px;
+	padding: 0 16px;
+}
+.nav li a:hover {
+	color: #fff;
+	/*background-color: #e0e0d5;*/
+}
+.nav li .active {
+	color: #ea8b2e;
+}
+.nav ul ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: #600;
+	padding: 0;
+}
+.nav ul ul li {
+	float: none;
+	width: 150px;
+}
+.nav ul ul a {
+	line-height: 120%;
+	text-align: left;
+	padding: 10px 16px;
+}
+.nav ul ul ul {
+	top: 0;
+	left: 100%;
+}
+.nav ul li:hover > ul {
+	display: block;
+}
+
+.center_link a:link{
+  color:black;
+  text-decoration:none;
+}
+.center_link a:hover{
+  color:black;
+  text-decoration:underline;
+}
+.center_link a:visited{
+  color:black;
+  text-decoration:none;
 }
