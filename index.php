@@ -86,7 +86,7 @@ span {
 	<div class="wrapper vec_link">
 
     <img src="images/vec.png" height="55" />
-    <a href="https://www.vec.go.th"> สำนักงานคณะกรรมการการอาชีวศึกษา</a>
+    <a href="https://www.vec.go.th" target="_blank" class="d-none d-md-inline-block d-lg-inline-block"> สำนักงานคณะกรรมการการอาชีวศึกษา</a>
 
     <ul>
         <li><a href="/" class="active"><i class="fa fa-home"></i> หน้าหลัก</a></li>
