@@ -31,7 +31,7 @@ $personal_pic=json_decode(file_get_contents($api_url));
                     <div class="card" style="width: 100%;">
                     <?php
                      if(!empty($person->image_url)){
-                         print '<img src="../../images/personal/'.$person->image_url.'" class="card-img-top" alt="...">';
+                         print '<img src="../../images/personal/'.$person->image_url.'" class="card-img-top" alt="..."  class="img-circle" style="object-fit: cover;">';
                      }else{
                          print '<img src="../../images/director/no_profile.png" class="card-img-top" alt="...">';
                      }
