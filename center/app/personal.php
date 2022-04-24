@@ -29,7 +29,13 @@ $personal_pic=json_decode(file_get_contents($api_url));
                 ?>
                 <div class="col-4 col-sm-4 col-md-4" style="margin-bottom: 20px;">
                     <div class="card" style="width: 100%;">
-                    <img src="../../images/director/no_profile.png" class="card-img-top" alt="...">
+                    <?php
+                     if(!empty($person->image_url)){
+                         print '<img src="../../images/director/'.$person->image_url.'" class="card-img-top" alt="...">';
+                     }else{
+                         print '<img src="../../images/director/no_profile.png" class="card-img-top" alt="...">';
+                     }
+                      ?>
                     <div class="card-body">
                         <h6 class="card-title"><center><?php print $person->prefix.$person->fname.' '.$person->lname; ?></center></h6>
                         <h6 class="card-title"><center>ตำแหน่ง <?php print $person->user_type; ?></center></h6>
