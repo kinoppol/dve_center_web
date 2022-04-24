@@ -40,7 +40,7 @@ $personal_pic=json_decode(file_get_contents($api_url));
                         <h6 class="card-title"><center><?php print $person->prefix.$person->fname.' '.$person->lname; ?></center></h6>
                         <h6 class="card-title"><center>ตำแหน่ง <?php print $person->user_type; ?></center></h6>
                         <h6 class="card-title">อีเมล <a href="mailto:<?php print $person->email; ?>" title="<?php print $person->email; ?>"><?php print str_lim($person->email,18); ?></a></h6>
-                        <h6 class="card-title">เบอร์ภายใน <a href="tel:<?php print $vext; ?>" title="<?php print $vext; ?>"><?php print str_lim($vext,20); ?></a></h6>
+                        <!-- <h6 class="card-title">เบอร์ภายใน <a href="tel:<?php print $vext; ?>" title="<?php print $vext; ?>"><?php print str_lim($vext,20); ?></a></h6> -->
                     </div>
                     </div>
                 </div>
