@@ -3,7 +3,7 @@ $title='ระบบฐานข้อมูลการจัดการศึ
 $api_url='https://dve.vec.go.th/ajax/dve_center/get_centers.php';
 //$api_url='http://localhost/dve2020/ajax/dve_center/get_centers.php';
 $center_data=json_decode(file_get_contents($api_url));
-
+$systemFoot='';
 ?>
 <!DOCTYPE html>
 <html lang="en">

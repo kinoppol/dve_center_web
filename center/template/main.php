@@ -18,6 +18,8 @@ $director_name=$center_data->school_data->director_name;
     <link rel="stylesheet" href="css/mystyle.css">
     <title><?php print $title; ?></title>
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" />
+
     
   <style>
   body{
@@ -226,6 +228,8 @@ $director_pic=json_decode(file_get_contents($api_url));
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
     <script>
   $(document).ready(function(){
       $('.openPopup').on('click',function(){
@@ -236,3 +240,5 @@ $director_pic=json_decode(file_get_contents($api_url));
       }); 
   });
   </script>
+  <?php
+  print $systemFoot;

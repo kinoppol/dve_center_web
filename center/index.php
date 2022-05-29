@@ -1,4 +1,5 @@
 <?php
+$systemFoot='';
 $center_id=$_GET['c'];
 if(empty($center_id))header('location:../');
 require_once('library/function.php');
