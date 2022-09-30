@@ -91,10 +91,10 @@ span {
 
     <ul>
         <li><a href="/" class="active"><i class="fa fa-home"></i> หน้าหลัก</a></li>
-        <li><a href="../index.php?app/home/index"><i class="fa fa-database"></i> ระบบฐานข้อมูล &#x25BE;</a>
+        <li><a href="<?php print $DVE_SERVER_URL; ?>index.php?app/home/index"><i class="fa fa-database"></i> ระบบฐานข้อมูล &#x25BE;</a>
             <ul>
-              <li><a href="../index.php?app/user/index"><i class="fa fa-user-check"></i> เข้าสู่ระบบ</a><li>
-              <li><a href="../index.php?app/user/password_recovery"><i class="fa fa-key"></i> กู้คืนรหัสผ่าน</a></li>
+              <li><a href="<?php print $DVE_SERVER_URL; ?>index.php?app/user/index"><i class="fa fa-user-check"></i> เข้าสู่ระบบ</a><li>
+              <li><a href="<?php print $DVE_SERVER_URL; ?>index.php?app/user/password_recovery"><i class="fa fa-key"></i> กู้คืนรหัสผ่าน</a></li>
             </ul>
         </li>
         </ul>
