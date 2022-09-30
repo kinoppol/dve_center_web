@@ -1,5 +1,5 @@
 <?php
-$DVE_SERVER_URL='https://dve.bncc.ac.th/dve2020/';
+$DVE_SERVER_URL='http://dve.bncc.ac.th/dve2020/';
 $title='ระบบฐานข้อมูลการจัดการศึกษาทวิภาคี DVE-DATA';
 $api_url=$DVE_SERVER_URL.'ajax/dve_center/get_centers.php';
 //$api_url='http://localhost/dve2020/ajax/dve_center/get_centers.php';
