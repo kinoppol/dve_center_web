@@ -52,9 +52,9 @@
                                       "sPrevious": "ก่อนหน้า",
                                       "sNext": "ถัดไป",
                                       "sLast": "สุดท้าย"
-                        },
-                        "order": []
-               }
+                        }
+               },
+               "order": []
           });
             $(document).ready(function () {
                 $("#newsTable").DataTable();
