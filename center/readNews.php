@@ -17,7 +17,7 @@ if(!empty($news->attach_files)){
     foreach($files as $f){
         $fname=explode('.',$f->location);
         $ext=end($fname);
-        $file_url='https://dve.bncc.ac.th/files/news/'.$news->center_id.'/'.$f->location;
+        $file_url=DVE_URL.'files/news/'.$news->center_id.'/'.$f->location;
         if(is_numeric(array_search($ext,array('jpg','JPG','jpeg','JPEG','png','PNG')))){
             ?>
 

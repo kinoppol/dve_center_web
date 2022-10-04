@@ -3,8 +3,9 @@ $systemFoot='';
 $center_id=$_GET['c'];
 if(empty($center_id))header('location:../');
 require_once('library/function.php');
+define('DVE_URL','http://dve.bncc.ac.th/dve2020/');
 
-$api_url='http://dve.bncc.ac.th/dve2020/ajax/dve_center/get_center.php?cid='.$center_id;
+$api_url=DVE_URL.'ajax/dve_center/get_center.php?cid='.$center_id;
 $center_data=json_decode(file_get_contents($api_url));
 $provinces=explode(',',$center_data->provinces);
 
@@ -12,7 +13,7 @@ $schools=array();
 foreach($provinces as $p){
   
 
-  $api_url='http://dve.bncc.ac.th/dve2020/ajax/api/get_school_in_province.php?pid='.$p;
+  $api_url=DVE_URL.'ajax/api/get_school_in_province.php?pid='.$p;
   $school_data=json_decode(file_get_contents($api_url));
   
   foreach($school_data as $sc){

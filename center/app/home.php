@@ -8,7 +8,7 @@
           <div class="col-12" style="margin-bottom: 20px;">
 
             <?php
-            $api_url='https://dve.vec.go.th/ajax/dve_center/get_all_news.php?cid='.$center_id;
+            $api_url=DVE_URL.'ajax/dve_center/get_all_news.php?cid='.$center_id;
             $news=json_decode(file_get_contents($api_url));
             if(count($news)>0){
               print '<table id="newsTable" class="display" style="width: 100%;">
