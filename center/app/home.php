@@ -52,7 +52,8 @@
                                       "sPrevious": "ก่อนหน้า",
                                       "sNext": "ถัดไป",
                                       "sLast": "สุดท้าย"
-                        }
+                        },
+                        "order": []
                }
           });
             $(document).ready(function () {
