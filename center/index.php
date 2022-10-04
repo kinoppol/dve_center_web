@@ -4,7 +4,7 @@ $center_id=$_GET['c'];
 if(empty($center_id))header('location:../');
 require_once('library/function.php');
 
-$api_url='http://dve.bncc.ac.th.th/dve2020/ajax/dve_center/get_center.php?cid='.$center_id;
+$api_url='http://dve.bncc.ac.th/dve2020/ajax/dve_center/get_center.php?cid='.$center_id;
 $center_data=json_decode(file_get_contents($api_url));
 $provinces=explode(',',$center_data->provinces);
 
