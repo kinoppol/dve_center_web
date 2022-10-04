@@ -1,7 +1,7 @@
 <?php
 //print_r($_GET);
 $news_id=$_GET['nid'];
-$api_url='https://dve.vec.go.th/ajax/dve_center/get_news_data.php?nid='.$news_id;
+$api_url='http://dve.bncc.ac.th/ajax/dve_center/get_news_data.php?nid='.$news_id;
 $news=json_decode(file_get_contents($api_url));
 //print_r($news);
 print '<h3>'.$news->subject.'</h3>';
@@ -17,7 +17,7 @@ if(!empty($news->attach_files)){
     foreach($files as $f){
         $fname=explode('.',$f->location);
         $ext=end($fname);
-        $file_url='https://dve.vec.go.th/files/news/'.$news->center_id.'/'.$f->location;
+        $file_url='https://dve.bncc.ac.th/files/news/'.$news->center_id.'/'.$f->location;
         if(is_numeric(array_search($ext,array('jpg','JPG','jpeg','JPEG','png','PNG')))){
             ?>
 
