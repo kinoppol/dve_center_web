@@ -3,7 +3,7 @@ $systemFoot='';
 $center_id=$_GET['c'];
 if(empty($center_id))header('location:../');
 require_once('library/function.php');
-define('DVE_URL','http://dve.bncc.ac.th/dve2020/');
+define('DVE_URL','https://dve.vec.go.th/');
 
 $api_url=DVE_URL.'ajax/dve_center/get_center.php?cid='.$center_id;
 $center_data=json_decode(file_get_contents($api_url));
